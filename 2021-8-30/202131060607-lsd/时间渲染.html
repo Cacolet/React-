@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>时间渲染</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 100px;
+            position: relative;
+            left: 50%;
+            top: 50px;
+            transform: translateX(-50%);
+            background-color: pink;
+            line-height: 100px;
+            text-align: center;
+            font-size: 22px;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        function getTime(){
+         var time=new Date();
+         var h=time.getHours();
+         h=h<10 ? '0'+h :h;
+         var m=time.getMinutes();
+         m=m<10 ? '0'+m:m;
+         var s=time.getSeconds();
+         s=s<10? '0'+s:s;
+         return h+':'+m+':'+s;
+      }
+      var box = document.querySelector('.box')
+      var d = new Date();
+      var d2 = d.getFullYear() + "年"+ (d.getMonth() + 1) +"月"+ d.getDate() +"日";                                  
+      box.innerHTML = '现在是'+ d2 + getTime() + '嘿嘿'
+    
+    </script>
+</body>
+</html>
